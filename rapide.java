@@ -1,9 +1,9 @@
 public class rapide{
-    public static void quicksort(Suite suite, int debut, int fin) {
+    public static void rapide(Suite suite, int debut, int fin) {
         if (debut < fin) {
             int indicePivot = partition(suite, debut, fin);
-            quicksort(suite, debut, indicePivot-1);
-            quicksort(suite, indicePivot+1, fin);
+            rapide(suite, debut, indicePivot-1);
+            rapide(suite, indicePivot+1, fin);
         }
     }
     
@@ -12,8 +12,12 @@ public class rapide{
         int d = debut+1;
         int f = fin;
         while (d < f) {
-            while(d < f && suite.get(f) >= valeurPivot) f--;
-            while(d < f && suite.get(d) <= valeurPivot) d++;
+            while(d < f && suite.get(f) >= valeurPivot){ 
+                f--;
+            }
+            while(d < f && suite.get(d) <= valeurPivot) {
+                d++;
+            }
             suite.permute(f, d);
         }
         if (suite.get(d) > valeurPivot) d--;
