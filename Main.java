@@ -16,10 +16,11 @@ public class Main {
 
         LinkedList<Integer> test = new LinkedList<>();
         Random random = new Random();
-        for(int i = 0; i < 10; i++){
-            test.add(random.nextInt(10));
+        for(int i = 0; i < 40; i++){
+            test.add(random.nextInt(100));
         }
         System.out.println(test.toString());
+        System.out.println("length: "+test.size());
         LinkedList<Integer> sortedList = trifusion.trifusion(test);
         System.out.println("Sorted list: " + sortedList.toString());
 
