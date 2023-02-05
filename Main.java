@@ -19,9 +19,9 @@ public class Main {
         for(int i = 0; i < 10; i++){
             test.add(random.nextInt(10));
         }
-        trifusion.trifusion(test);
         System.out.println(test.toString());
-        System.out.println(test.size());
+        LinkedList<Integer> sortedList = trifusion.trifusion(test);
+        System.out.println("Sorted list: " + sortedList.toString());
 
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;

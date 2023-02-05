@@ -3,18 +3,20 @@ import java.util.LinkedList;
 public class trifusion {
 
 	public static LinkedList<Integer> trifusion(LinkedList<Integer> list) {
-		if (list.size() <= 1) {
+		int size = list.size();
+		
+		if (size <= 1) {
 			return list;
 		}
 		
 		LinkedList<Integer> gauche = new LinkedList<Integer>();
 		LinkedList<Integer> droite = new LinkedList<Integer>();
 
-		for (int i = 0; i < list.size()/2; i++) {
+		for (int i = 0; i < size/2; i++) {
 			gauche.add(list.remove());
 			
 		}
-		for (int i = list.size()/2; i < list.size(); i++) {
+		for (int i = size/2; i < size; i++) {
 			droite.add(list.remove());
 		}
 		return fusioner(trifusion(gauche), trifusion(droite));
@@ -44,9 +46,4 @@ public class trifusion {
 		}
 		return total;
 	}
-
-	public String toString(LinkedList<Integer> list){
-		return list.toString();
-	}
-
 }
